@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\BinarySearch.cs" />
     <Compile Include="Classes\InsertionSort.cs" />
     <Compile Include="Classes\MergeSort.cs" />
     <Compile Include="Classes\SelectionSort.cs" />

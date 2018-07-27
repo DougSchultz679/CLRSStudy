@@ -8,12 +8,7 @@ namespace SortStudy.Helpers
 {
     class CollectionToString
     {
-        public string ArrayReporter(int[] A)
-        {
-            return "{ " + String.Join(", ", A) + " }";
-        }
-
-        public string ListReporter(List<int> A)
+        public string ArrayReporter(IEnumerable<int> A)
         {
             return "{ " + String.Join(", ", A) + " }";
         }
