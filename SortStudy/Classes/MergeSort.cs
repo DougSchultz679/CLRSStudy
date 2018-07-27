@@ -92,6 +92,7 @@ namespace SortStudy.Classes
             return sorted;
         }
 
+        // Problem 2-1
         public T[] CoarseSort(T[] input)
         {
             T[] Sorted = this.CourseSplit(input);

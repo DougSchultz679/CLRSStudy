@@ -46,7 +46,9 @@
     <Compile Include="Classes\InsertionSort.cs" />
     <Compile Include="Classes\MergeSort.cs" />
     <Compile Include="Classes\SelectionSort.cs" />
+    <Compile Include="Helpers\ArrayPopulator.cs" />
     <Compile Include="Helpers\CollectionToString.cs" />
+    <Compile Include="Problems\Chapter2.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

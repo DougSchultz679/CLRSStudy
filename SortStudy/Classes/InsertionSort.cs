@@ -28,7 +28,6 @@ namespace SortStudy.Classes
             return input;
         }
 
-        //{6, 5, 3, 1, 8, 2, 7, 4 }
         public T[] RecursiveSort(T[] input, int n)
         {
             if (n > 0)

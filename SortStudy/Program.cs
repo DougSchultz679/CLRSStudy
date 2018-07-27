@@ -15,16 +15,12 @@ namespace SortStudy
             Console.WriteLine("Testing Sort Algorithms");
             CollectionToString CtoS = new CollectionToString();
 
-            MergeSort<int> MS = new MergeSort<int>();
+            MergeSort<int> MS = new MergeSort<int>(new InsertionSort<int>());
 
             int[] SampleA = { 6, 5, 3, 1, 8, 2, 7, 4 };
             int[] SampleB = { 1, 2, 3, 4, 5, 7, 8, 9, 10 };
-            int[] SampleC = new int[33];
-
-            for (int i = 1; i < SampleC.Length; i++)
-            {
-                SampleC[i] = SampleC[i - 1] + 3;
-            }
+            int[] SampleC = ArrayPopulator.populateRndOrder(new int[380]);
+            int[] SampleD = ArrayPopulator.populateRndOrder(new int[12]);
 
             Console.WriteLine("Contents of {0}: {1}",nameof(SampleC),CtoS.ArrayReporter(SampleC));
 
@@ -33,14 +29,21 @@ namespace SortStudy
             //    CtoS.ArrayReporter(MS.Sort(SampleX))
             //    );
 
-            //int[] sortedSampleX = SampleX.AsQueryable().OrderBy(Comparer<int>.Default);
+            //MergeSort Test
+
+            //CourseSort in action
+            Console.WriteLine("{0} on {1}: {2}",
+                nameof(MergeSort<int>.CoarseSort), 
+                nameof(SampleC),
+                CtoS.ArrayReporter(MS.CoarseSort(SampleC)));
+
 
             //InsertionSort Test
-            InsertionSort<int> IS = new InsertionSort<int>();
+            //InsertionSort<int> IS = new InsertionSort<int>();
             //Console.WriteLine("Insertion sort results: {0}", CtoS.ArrayReporter(IS.Sort(SampleX)));
 
-            Console.WriteLine("Insertion sort results: {0}",
-                CtoS.ArrayReporter(IS.RecursiveSort(SampleA, SampleA.Length - 1)));
+            //Console.WriteLine("Insertion sort results: {0}",
+            //    CtoS.ArrayReporter(IS.RecursiveSort(SampleA, SampleA.Length - 1)));
 
             //BinarySearch Test
             //BinarySearch<int> BS = new BinarySearch<int>();

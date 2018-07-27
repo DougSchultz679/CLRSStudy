@@ -10,7 +10,7 @@ namespace SortStudy.Problems
     class Chapter2Problems
     {
         private BinarySearch<int> _binarySearch = new BinarySearch<int>();
-        private MergeSort<int> _mergeSort = new MergeSort<int>();
+        private MergeSort<int> _mergeSort = new MergeSort<int>(new InsertionSort<int>());
 
         //2.37
         // prove there are 2 elements in input array that add up to the integer provided. 
