@@ -36,7 +36,7 @@ namespace SortStudy
             //int[] sortedSampleX = SampleX.AsQueryable().OrderBy(Comparer<int>.Default);
 
             //InsertionSort Test
-            InsertionSort<int> IS = new InsertionSort<int>(new BinarySearch<int>());
+            InsertionSort<int> IS = new InsertionSort<int>();
             //Console.WriteLine("Insertion sort results: {0}", CtoS.ArrayReporter(IS.Sort(SampleX)));
 
             Console.WriteLine("Insertion sort results: {0}",

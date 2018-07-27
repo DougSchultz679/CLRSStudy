@@ -8,34 +8,7 @@ namespace SortStudy.Classes
 {
     class InsertionSort<T> where T : IComparable
     {
-        private BinarySearch<T> _binSearch;
-
-        public InsertionSort (BinarySearch<T> BinarySearch)
-        {
-            _binSearch = BinarySearch;
-        }
-
-
-        //work in progress
-        //public T[] SortOLgN(T[] input)
-        //{
-        //    for (int j = 1; j < input.Length; j++)
-        //    {
-        //        var key = input[j];
-        //        int i = 0;
-
-        //        while (i >= 0 && input[i].CompareTo(key) > 0)
-        //        {
-        //            var tmp = input[i + 1];
-        //            input[i + 1] = input[i];
-        //            input[i] = tmp;
-        //            i--;
-        //        }
-        //        key = input[i + 1];
-        //    }
-        //    return input;
-        //}
-
+       
         public T[] Sort(T[] input)
         {
             for (int j = 1; j < input.Length; j++)
