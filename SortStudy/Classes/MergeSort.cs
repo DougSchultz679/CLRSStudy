@@ -8,6 +8,13 @@ namespace SortStudy.Classes
 {
     public class MergeSort<T> where T : IComparable
     {
+        private InsertionSort<T> _insertionSort;
+
+        public MergeSort(InsertionSort<T> InsertionSort)
+        {
+            _insertionSort = InsertionSort;
+        }
+
         public T[] Sort(T[] source)
         {
             T[] sorted = this.Split(source);
@@ -83,6 +90,39 @@ namespace SortStudy.Classes
             }
 
             return sorted;
+        }
+
+        public T[] CoarseSort(T[] input)
+        {
+            T[] Sorted = this.CourseSplit(input);
+            return Sorted;
+        }
+
+        private T[] CourseSplit(T[] input)
+        {     
+            if (input.Length > 18)
+            {
+                int iMiddle = input.Length / 2;
+                T[] left = new T[iMiddle];
+                for (int i = 0; i < iMiddle; i++)
+                {
+                    left[i] = input[i];
+                }
+                T[] right = new T[input.Length - iMiddle];
+                for (int i = iMiddle; i < input.Length; i++)
+                {
+                    right[i - iMiddle] = input[i];
+                }
+                T[] splitLeft = this.CourseSplit(left);
+                T[] splitRight = this.CourseSplit(right);
+
+                T[] sorted = this.Merge(splitLeft, splitRight);
+
+                return sorted;
+            } else
+            {
+                return this._insertionSort.Sort(input);
+            }
         }
     }
 }

@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace SortStudy.Classes
 {
-    class InsertionSort<T> where T : IComparable
+    public class InsertionSort<T> where T : IComparable
     {
-       
+
         public T[] Sort(T[] input)
         {
             for (int j = 1; j < input.Length; j++)

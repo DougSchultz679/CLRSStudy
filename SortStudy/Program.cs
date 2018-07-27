@@ -42,7 +42,6 @@ namespace SortStudy
             Console.WriteLine("Insertion sort results: {0}",
                 CtoS.ArrayReporter(IS.RecursiveSort(SampleA, SampleA.Length - 1)));
 
-
             //BinarySearch Test
             //BinarySearch<int> BS = new BinarySearch<int>();
 
