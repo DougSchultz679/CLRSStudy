@@ -27,8 +27,5 @@ namespace SortStudy.Problems
             }
             return false;
         }
-
-
-
     }
 }

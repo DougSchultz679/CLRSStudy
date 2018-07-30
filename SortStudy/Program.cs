@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using SortStudy.Classes;
+using SortStudy.DataStructureProtos;
 using SortStudy.Helpers;
 
 namespace SortStudy
@@ -22,7 +23,7 @@ namespace SortStudy
             int[] SampleC = ArrayPopulator.populateRndOrder(new int[380]);
             int[] SampleD = ArrayPopulator.populateRndOrder(new int[12]);
 
-            Console.WriteLine("Contents of {0}: {1}",nameof(SampleC),CtoS.ArrayReporter(SampleC));
+            //Console.WriteLine("Contents of {0}: {1}",nameof(SampleC),CtoS.ArrayReporter(SampleC));
 
             //Console.WriteLine("The output of your {0} is: {1}",
             //    System.Reflection.MethodBase.GetCurrentMethod(),
@@ -32,10 +33,10 @@ namespace SortStudy
             //MergeSort Test
 
             //CourseSort in action
-            Console.WriteLine("{0} on {1}: {2}",
-                nameof(MergeSort<int>.CoarseSort), 
-                nameof(SampleC),
-                CtoS.ArrayReporter(MS.CoarseSort(SampleC)));
+            //Console.WriteLine("{0} on {1}: {2}",
+            //    nameof(MergeSort<int>.CoarseSort), 
+            //    nameof(SampleC),
+            //    CtoS.ArrayReporter(MS.CoarseSort(SampleC)));
 
 
             //InsertionSort Test
@@ -58,7 +59,77 @@ namespace SortStudy
             //SelectionSort<int> SS = new SelectionSort<int>();
             //Console.WriteLine("Insertion sort results: {0}", CtoS.ArrayReporter(SS.Sort(SampleX)));
 
+            TestSinglyLinkedList();
+
             Console.ReadLine();
+        }
+
+        static void TestSinglyLinkedList()
+        {
+            Console.WriteLine(" ***** Singly Linked List Implementation ***** ");
+
+            MyLinkedList<int> testList = new MyLinkedList<int>();
+
+            //testing AddFirst
+            for (int i = 0; i < 6; i++) testList.AddFirst(i);
+            CollectionToString CtoS = new CollectionToString();
+
+            Console.WriteLine(CtoS.MyLinkedListReporter(testList));
+
+            //test AddLast
+            testList.AddLast(7);
+            Console.WriteLine(CtoS.MyLinkedListReporter(testList));
+
+            //test AddAfter
+            //after head
+            testList.AddAfter(5, 6);
+            Console.WriteLine(CtoS.MyLinkedListReporter(testList));
+
+            //in middle
+            testList.AddAfter(4, 5);
+
+            //after end
+            testList.AddAfter(7, 8);
+            Console.WriteLine(CtoS.MyLinkedListReporter(testList));
+
+            //handle miss
+            testList.AddAfter(9, 3);
+            Console.WriteLine(CtoS.MyLinkedListReporter(testList));
+
+
+            //test AddBefore
+            //before head
+            testList.AddBefore(5, 4);
+            Console.WriteLine(CtoS.MyLinkedListReporter(testList));
+
+            //in middle
+            testList.AddBefore(3, 4);
+            Console.WriteLine(CtoS.MyLinkedListReporter(testList));
+
+            //before last
+            testList.AddBefore(8, 7);
+            Console.WriteLine(CtoS.MyLinkedListReporter(testList));
+
+            //handle miss
+            testList.AddBefore(9, 3);
+            Console.WriteLine(CtoS.MyLinkedListReporter(testList));
+
+            //test DeleteAt
+            //first
+            testList.DeleteAt(4);
+            Console.WriteLine(CtoS.MyLinkedListReporter(testList));
+
+            //middle
+            testList.DeleteAt(4);
+            Console.WriteLine(CtoS.MyLinkedListReporter(testList));
+
+            //end
+            testList.DeleteAt(8);
+            Console.WriteLine(CtoS.MyLinkedListReporter(testList));
+
+            //handle miss
+            testList.DeleteAt(9);
+            Console.WriteLine(CtoS.MyLinkedListReporter(testList));
         }
     }
 }
