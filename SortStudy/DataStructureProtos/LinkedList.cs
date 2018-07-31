@@ -107,10 +107,27 @@ namespace SortStudy.DataStructureProtos
                 NodeSLL<T> tmp = Head;
                 while (tmp.Next != null && tmp.Next.Data.CompareTo(key) != 0) tmp = tmp.Next;
 
+                //handle miss
                 if (tmp.Next == null) return;
 
                 tmp.Next = tmp.Next.Next;
             }
+        }
+
+        public void Reverse()
+        {
+            NodeSLL<T> curr = Head;
+            NodeSLL<T> prev = null;
+            NodeSLL<T> currPtr = null; 
+
+            while (curr != null)
+            {
+                currPtr = curr.Next;
+                curr.Next = prev;
+                prev = curr;
+                curr = currPtr;
+            }
+            this.Head = prev;
         }
     }
 

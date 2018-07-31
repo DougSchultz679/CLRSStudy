@@ -76,7 +76,12 @@ namespace SortStudy
 
             Console.WriteLine(CtoS.MyLinkedListReporter(testList));
 
+            //test reverse
+            testList.Reverse();
+            Console.WriteLine(CtoS.MyLinkedListReporter(testList));
+
             //test AddLast
+            Console.WriteLine("break");
             testList.AddLast(7);
             Console.WriteLine(CtoS.MyLinkedListReporter(testList));
 
