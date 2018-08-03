@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using SortStudy.Classes;
 using SortStudy.DataStructureProtos;
 using SortStudy.Helpers;
+using SortStudy.Problems;
 
 namespace SortStudy
 {
@@ -59,9 +60,22 @@ namespace SortStudy
             //SelectionSort<int> SS = new SelectionSort<int>();
             //Console.WriteLine("Insertion sort results: {0}", CtoS.ArrayReporter(SS.Sort(SampleX)));
 
-            TestSinglyLinkedList();
+            TestMaxSubArraySoln();
 
             Console.ReadLine();
+        }
+
+        static void TestMaxSubArraySoln()
+        {
+            Console.WriteLine(" ***** MaxSubArray Solutions Test ***** ");
+
+            int[] sampleAAA = { 13, -3, -25, 20, -3, -16, -23, 18, 20, -7, 12, -5, -22, 15, -4, 7 };
+            CollectionToString CtoS = new CollectionToString();
+            MaxSubArray MSA = new MaxSubArray();
+
+            Console.WriteLine("Brute sum result: {0}", MSA.BruteForceMax(sampleAAA));
+            Console.WriteLine("Brute start array result: {0}",MSA.BruteForceStartPos(sampleAAA));
+
         }
 
         static void TestSinglyLinkedList()
@@ -81,7 +95,6 @@ namespace SortStudy
             Console.WriteLine(CtoS.MyLinkedListReporter(testList));
 
             //test AddLast
-            Console.WriteLine("break");
             testList.AddLast(7);
             Console.WriteLine(CtoS.MyLinkedListReporter(testList));
 

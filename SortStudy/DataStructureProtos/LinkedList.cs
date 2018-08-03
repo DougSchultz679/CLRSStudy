@@ -88,10 +88,11 @@ namespace SortStudy.DataStructureProtos
             {
                 NodeSLL<T> tmp = Head;
                 while (tmp.Next != null && tmp.Next.Data.CompareTo(key) != 0) tmp = tmp.Next;
+
                 //handle miss
                 if (tmp.Next == null && tmp.Data.CompareTo(key) != 0) return;
                 
-                //do the insert
+                //do insert
                 tmp.Next = new NodeSLL<T>(input, tmp.Next);
             }
         }
@@ -131,7 +132,7 @@ namespace SortStudy.DataStructureProtos
         }
     }
 
-    //node that is a member of a singly linked list
+    //member of a singly linked list
     class NodeSLL<T> where T : IComparable
     {
         public T Data;

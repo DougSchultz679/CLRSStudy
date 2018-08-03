@@ -13,7 +13,7 @@ namespace SortStudy.Problems
         private MergeSort<int> _mergeSort = new MergeSort<int>(new InsertionSort<int>());
 
         //2.37
-        // prove there are 2 elements in input array that add up to the integer provided. 
+        // prove there are 2 elements in input array that add up to the integer provided in O(n*lgn) worst case. 
 
         public bool Solution2_37(int[] input, int X)
         {

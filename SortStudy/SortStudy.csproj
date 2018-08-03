@@ -50,6 +50,7 @@
     <Compile Include="Helpers\ArrayPopulator.cs" />
     <Compile Include="Helpers\CollectionToString.cs" />
     <Compile Include="Problems\Chapter2.cs" />
+    <Compile Include="Problems\MaxSubArray.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
